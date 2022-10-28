@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移213交作业网页</title>
+    <link rel="icon" href="../i/cjh_ico.ico" type="image/x-icon" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("../i/nicepicture.jpg");
+        }
+        #span2 {
+            left: 80px;
+            top: 10px;
+            animation: spans_a2 1.5s;
+        }
+        #span3 {
+            right: 80px;
+            top: 10px;
+            animation: spans_a3 1.5s;
+        }
+        #span4 {
+            top: 50px;
+            left: 20%;
+            animation: spans_a4 1.5s;
+        }
+        #span4,#span2,#span3 {
+            position: absolute;
+            font-size: 30px;
+        }
+        @keyframes spans_a2 {
+            from{opacity: 0;left: 0;}
+            to{opacity: 1;left: 80px}
+        }
+        @keyframes spans_a3 {
+            from{opacity: 0;right: 0;}
+            to{opacity: 1;right: 80px;}
+
+        }
+        @keyframes spans_a4 {
+            from{opacity: 0;left: 0;}
+            to{opacity: 1;left: 20%;}
+        }
+        #span1 {
+            position: absolute;
+            left: 450px;
+            font-size: 100px;
+            color: white;
+            text-align: center;
+            font-family: "STKaiti",serif;
+            font-weight: 500;
+            /*-webkit-font-smoothing: subpixel-antialiased;*/
+        }
+        span {
+            font-size: 20px;
+            color: hotpink;
+            font-family: "STKaiti",serif ;
+        }
+        #lazy {
+            position: relative;
+            top: 130px;
+            text-align: center;
+            border-top: 1px solid yellow;
+            border-radius: 15px;
+            background-color: white;
+            height: 300px;
+            width: 1000px;
+            left: 20%;
+            /*margin: 0 auto;*/
+        }
+
+        #inputone,#inputtwo {
+            /*display: inline-block;*/
+            position: absolute;
+            top: 10px;
+            /*top: 80px;*/
+            left: 80px;
+            height: 20px;
+            width: 200px;
+            border: none;
+            outline: none;
+        }
+
+        .box_input_up {
+            position: absolute;
+            top: 100px;
+            left: 30%;
+            /*margin: 0 auto;*/
+            width: 400px;
+            height: 40px;
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+        }
+        .box_input_down {
+            position: absolute;
+            top: 160px;
+            left: 30%;
+            /*margin: 0 auto;*/
+            width: 400px;
+            height: 40px;
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+        }
+        .box_input_up_img,.box_input_down_img {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+        .label_file {
+            position: absolute;
+            top: 220px;
+            left: 17%;
+            /*border: 2px solid #3fca6d;*/
+            background-color: #3fca6d;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            height: 40px;
+            width: 300px;
+            line-height: 40px;
+        }
+        @keyframes label_file_a {
+            from {background-color: #3fca6d;color: white}
+            to {background-color: yellow;color: #3fca6d}
+        }
+        .label_file:hover {
+            animation: label_file_a 1s;
+            /*animation-iteration-count: infinite;*/
+            animation-direction: reverse;
+        }
+        #submit {
+            display: inline-block;
+            position: absolute;
+            top: 220px;
+            left: 50%;
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            background-color: #3fca6d;
+            color: white;
+            cursor: pointer;
+            border: none;
+            line-height: 40px;
+            font-size: 16px;
+            transition-property: top;
+            transition-timing-function: ease-in;
+            transition-duration: 0.4s;
+        }
+        @keyframes label_file_s {
+            from {background-color: #3fca6d;color: white;}
+            to {background-color: yellow;color: #3fca6d;}
+        }
+        #submit:hover {
+            animation: label_file_s 1s;
+            animation-direction: reverse;
+            top: 218px;
+        }
+        .last {
+            position: absolute;
+            top: 265px;
+            left: 17%;
+
+        }
+        #upload {
+            display: inline-block;
+            position: absolute;
+            bottom: -500px;
+            left: -100px;
+        }
+    </style>
+</head>
+<body>
+<!--大佬别黑！只是一个比较忙的学委为了方便同学交作业写的网页罢了！-->
+<span id="span1">这里是作业提交处</span>
+<div id="lazy" >
+    <span id="span2">请好好写学号，不然不让上传</span><span id="span3">另外如果是多个文件记得压缩zip.</span><br>
+     <span id="span4">文件大则慢，反之则快，理想速度1.0MB/s</span>
+    <form action="#" method="post" enctype="multipart/form-data" >
+        <div class="box_input_up"><img src="../i/uuuup.jpg" width="30" height="30" class="box_input_up_img"><input type="text" name="name" placeholder="请输入姓名" id="inputone"></div><br>
+        <div class="box_input_down"><img src="../i/ddddn.jpg" width="30" height="30" class="box_input_down_img"><input type="text" name="id" placeholder="请输入学号" id="inputtwo"></div><br>
+<!--        <input type="file" name="file" id="file" >-->
+        <label for="upload" class="label_file">选择文件</label>
+        <input type="file" id="upload" style="opacity: 0;"/>
+        <input type="submit" name="names" value="提交" id="submit">
+        <span class="last"></span>
+    </form>
+    </div>
+<script>
+    let h1=document.querySelector("span");
+    let h1_innerhtml=h1.innerHTML;
+    let i=1;
+    let show =setInterval(function (){
+        h1.innerHTML=h1_innerhtml.substring(0,i);
+        h1.style.opacity=i/10;
+        // h1.style.fontSize=i*10+'px';
+        i++;
+        if(h1_innerhtml.length===i-1){
+            clearInterval(show)
+        }
+    },150);
+    let inputone = document.querySelector("#inputone");
+    inputone.focus();
+    let inputtwo = document.querySelector("#inputtwo");
+    let myfile=document.querySelector("#upload");
+    let last =document.querySelector(".last");
+    myfile.addEventListener("change",function (){
+        last.innerHTML = this.files[0].name;
+    })
+    let sumit=document.querySelector("#submit");
+</script>
+</body>
+</html>
+
